@@ -1,423 +1,250 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arsalan Premium Barber | Casablanca</title>
-    <meta name="description" content="Luxury barber shop in Casablanca. Professional haircuts, beard trims, and grooming services.">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:wght@600;700&family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0b0b0b;
-            --card-bg: #141414;
-            --gold: #d4af37;
-            --gold-light: #f3e5ab;
-            --text-color: #f5f5f5;
-            --text-muted: #aaaaaa;
-            --transition: all 0.3s ease;
+            --bg-color: #0d0d0d;
+            --card-bg: #161616;
+            --accent-color: #d4af37;
+            --accent-light: #f3e5ab;
+            --text-color: #f0f0f0;
+            --text-muted: #b3b3b3;
+            --border-gold: rgba(212, 175, 55, 0.3);
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        h2, h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-        }
-
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
+        /* Hero Section with Image */
+        .hero-section {
             width: 100%;
-            background: rgba(11, 11, 11, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-family: 'UnifrakturMaguntia', cursive;
-            font-size: 2rem;
-            color: var(--gold);
-            letter-spacing: 1px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 400;
-            transition: var(--transition);
-        }
-
-        nav ul li a:hover {
-            color: var(--gold);
-        }
-
-        /* Hero Section with Logo Image */
-        .hero {
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 140px 8% 80px;
-            gap: 50px;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #0b0b0b 100%);
-        }
-
-        .hero-content {
-            flex: 1;
-        }
-
-        .hero-content h1 {
-            font-family: 'UnifrakturMaguntia', cursive;
-            font-size: 4.5rem;
-            margin-bottom: 15px;
-            color: var(--gold);
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-        }
-
-        .hero-image {
-            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        .hero-image img {
-            max-width: 380px;
-            width: 100%;
-            border-radius: 15px;
-            border: 2px solid var(--gold);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--gold);
-            color: #000;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn:hover {
-            background-color: var(--gold-light);
-            transform: translateY(-3px);
-        }
-
-        /* Sections General */
-        section {
-            padding: 100px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
             position: relative;
-            font-family: 'Cinzel', serif;
+            background-color: #000;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: var(--gold);
-            margin: 10px auto 0;
-        }
-
-        /* About Section */
-        .about {
-            background-color: var(--card-bg);
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 50px;
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .about p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background-color: var(--card-bg);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 40px 30px;
-            border-radius: 10px;
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-5px);
-        }
-
-        .service-card i {
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--gold);
-            margin-top: 15px;
-        }
-
-        /* Gallery Section */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
-            height: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            background-color: var(--card-bg);
-        }
-
-        .gallery-item img {
+        .hero-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
+            max-height: 100vh;
+            object-fit: contain;
+            display: block;
         }
 
-        .gallery-item img:hover {
-            transform: scale(1.05);
+        /* Video Section */
+        .video-section {
+            width: 100%;
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, var(--bg-color), #141414);
+            text-align: center;
+            border-top: 1px solid var(--border-gold);
         }
 
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            background-color: var(--card-bg);
-            padding: 50px;
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+        .video-section h2 {
+            font-family: 'Cinzel Decorative', 'Cormorant Garamond', serif;
+            color: var(--accent-color);
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .video-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--card-bg);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.8);
+            position: relative;
+            padding: 6px;
+        }
+
+        .video-container::before {
+            content: "";
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            border: 1px dashed rgba(212, 175, 55, 0.15);
+            border-radius: 8px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        video {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Content Sections */
+        section {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-gold);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        section::before {
+            content: "";
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            border: 1px dashed rgba(212, 175, 55, 0.15);
+            border-radius: 8px;
+            pointer-events: none;
+        }
+
+        h2.section-title {
+            font-family: 'Cinzel Decorative', 'Cormorant Garamond', serif;
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+        }
+
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed rgba(212, 175, 55, 0.2);
+        }
+
+        .service-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .service-item h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--accent-light);
+            margin-bottom: 4px;
+        }
+
+        .service-price {
+            font-family: 'Cinzel Decorative', 'Cormorant Garamond', serif;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.3rem;
+            background: rgba(212, 175, 55, 0.08);
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border-gold);
         }
 
         .contact-info p {
-            margin-bottom: 20px;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            margin-bottom: 10px;
         }
 
-        .contact-info i {
-            color: var(--gold);
-            font-size: 1.2rem;
+        .contact-info strong {
+            color: var(--accent-light);
         }
 
-        .contact-actions {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: #fff;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #20ba5a;
-            color: #fff;
-        }
-
-        .btn-call {
-            background-color: var(--gold);
-            color: #000;
-        }
-
-        /* Footer */
         footer {
             text-align: center;
-            padding: 30px;
-            background-color: #050505;
+            margin: 40px 0;
             color: var(--text-muted);
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
-        }
-
-        @media(max-width: 900px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 120px;
-            }
-            nav ul { display: none; }
-            .hero-content h1 { font-size: 3.5rem; }
+            font-size: 0.9rem;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="logo">Arsalan</div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#video">Video</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- الجزء الأول: الصورة في الواجهة -->
+    <div class="hero-section">
+        <img src="image.png" alt="Arsalan Premium Barber Hero" class="hero-image">
+    </div>
 
-    <!-- Hero Section with Image 16 -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Arsalan</h1>
-            <p>Experience luxury grooming, classic cuts, and modern styling in the heart of Casablanca.</p>
-            <a href="https://wa.me/212617375671" target="_blank" class="btn"><i class="fab fa-whatsapp"></i> Book Appointment</a>
-        </div>
-        <div class="hero-image">
-            <img src="image_16.png" alt="Arsalan Premium Barber Signature Logo">
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="about">
-            <h2 class="section-title" style="margin-bottom: 20px;">About Us</h2>
-            <p>Welcome to Arsalan Premium Barber, where traditional craftsmanship meets modern luxury. Located at 151 Ousama Ibno Zaid, Casablanca, we offer top-tier grooming services tailored to the contemporary gentleman in an elite atmosphere.</p>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-cut"></i>
-                <h3>Haircut</h3>
-                <p>Precision haircut tailored to your style, washed and styled to perfection.</p>
-                <div class="price">80 MAD</div>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-air-freshener"></i>
-                <h3>Beard Trim</h3>
-                <p>Expert beard shaping, razor line-up, and nourishing hot towel treatment.</p>
-                <div class="price">40 MAD</div>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-user-tie"></i>
-                <h3>Haircut & Beard</h3>
-                <p>The ultimate grooming package combining our signature haircut and beard trim.</p>
-                <div class="price">120 MAD</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section id="video" style="text-align: center; background-color: var(--card-bg); border-top: 1px solid rgba(212, 175, 55, 0.2); border-bottom: 1px solid rgba(212, 175, 55, 0.2);">
-        <h2 class="section-title">Our Experience in Motion</h2>
-        <div style="max-width: 800px; margin: 0 auto; border-radius: 12px; overflow: hidden; border: 2px solid var(--gold); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);">
-            <video controls autoplay muted loop style="width: 100%; display: block;">
-                <source src="gemini_generated_video.mp4" type="video/mp4">
-                متصفحك لا يدعم تشغيل الفيديو.
+    <!-- الجزء الثاني: الفيديو -->
+    <div class="video-section">
+        <h2>Experience & Craftsmanship</h2>
+        <div class="video-container">
+            <video controls>
+                <source src="gemini_generated_video_C81661A4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
             </video>
         </div>
+    </div>
+
+    <!-- معلومات ومنى الموقع -->
+    <section>
+        <h2 class="section-title">About Us</h2>
+        <p>Welcome to Arsalan Premium Barber, where traditional craftsmanship meets modern luxury. Located at 151 Ousama Ibno Zaid, Casablanca, we offer top-tier grooming services tailored to the contemporary gentleman in an elite atmosphere.</p>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery">
-        <h2 class="section-title">Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="image_7.png" alt="Fade Haircut Style"></div>
-            <div class="gallery-item"><img src="image_9.png" alt="Long Hair Styling"></div>
-            <div class="gallery-item"><img src="image_10.png" alt="Arsalan Shop Exterior"></div>
-            <div class="gallery-item"><img src="image_11.png" alt="Blonde Buzz Cut"></div>
-            <div class="gallery-item"><img src="image_12.png" alt="Classic Side Part Fade"></div>
-            <div class="gallery-item"><img src="image_13.png" alt="Slick Back Haircut"></div>
-            <div class="gallery-item"><img src="image_14.png" alt="Top Knot Fade"></div>
-            <div class="gallery-item"><img src="image_15.png" alt="Modern Skin Fade"></div>
-            <div class="gallery-item"><img src="image_16.png" alt="Arsalan Premium Barber Logo"></div>
+    <section>
+        <h2 class="section-title">Our Services</h2>
+        
+        <div class="service-item">
+            <div>
+                <h3>Haircut</h3>
+                <p style="color: var(--text-muted);">Precision haircut tailored to your style, washed and styled to perfection.</p>
+            </div>
+            <div class="service-price">80 MAD</div>
+        </div>
+
+        <div class="service-item">
+            <div>
+                <h3>Beard Trim</h3>
+                <p style="color: var(--text-muted);">Expert beard shaping, razor line-up, and nourishing hot towel treatment.</p>
+            </div>
+            <div class="service-price">40 MAD</div>
+        </div>
+
+        <div class="service-item">
+            <div>
+                <h3>Haircut & Beard</h3>
+                <p style="color: var(--text-muted);">The ultimate grooming package combining our signature haircut and beard trim.</p>
+            </div>
+            <div class="service-price">120 MAD</div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
+    <section class="contact-info">
         <h2 class="section-title">Contact Us</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Visit & Connect</h3>
-                <p><i class="fas fa-map-marker-alt"></i> 151 Ousama Ibno Zaid (Rue Jura), Casablanca 20370, Morocco</p>
-                <p><i class="fas fa-phone"></i> +212 617-375671</p>
-                <div class="contact-actions">
-                    <a href="https://wa.me/212617375671" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                    <a href="tel:+212617375671" class="btn btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
-                    <a href="https://maps.google.com/?q=151+Ousama+Ibno+Zaid+Casablanca" target="_blank" class="btn"><i class="fas fa-map"></i> Google Maps</a>
-                </div>
-            </div>
-            <div class="map-box" style="border-radius: 10px; overflow: hidden; min-height: 250px;">
-                <iframe width="100%" height="100%" style="border:0; min-height: 250px;" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.8!2d-7.6!3d33.59!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM1JzM2LjAiTiA3wrAzNicwMC4wIlc!5e0!3m2!1sen!2sma!4v1650000000000"></iframe>
-            </div>
-        </div>
+        <p><strong>Address:</strong> 151 Ousama Ibno Zaid (Rue Jura), Casablanca 20370, Morocco</p>
+        <p><strong>Phone:</strong> +212 617-375671</p>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Arsalan Premium Barber. All Rights Reserved.</p>
     </footer>
