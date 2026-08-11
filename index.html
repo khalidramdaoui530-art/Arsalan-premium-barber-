@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arsalan - Premium Barber</title>
-    <!-- استدعاء خطوط أنيقة من جوجل -->
+    <!-- استدعاء خطوط أنيقة -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <!-- استدعاء أيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,24 +19,40 @@
             background-color: #0b0805;
             color: #d4af37;
             font-family: 'Playfair Display', serif;
-            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        /* حاوية التصميم الكلية */
+        /* حاوية التصميم الإطارية المطابقة تماماً للصورة */
         .hero-section {
             position: relative;
             width: 100%;
+            max-width: 480px;
             min-height: 100vh;
-            background: radial-gradient(circle, #1a140c 0%, #080604 100%);
-            border: 15px solid #141008;
-            border-image: linear-gradient(to bottom, #d4af37, #4a3b11) 1;
+            background: radial-gradient(circle at center, #241c10 0%, #100b05 60%, #060402 100%);
+            border: 12px solid #141008;
+            box-shadow: 0 0 30px rgba(0,0,0,0.9);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            padding: 20px 10px;
+            padding: 15px 10px;
             text-align: center;
+            overflow: hidden;
         }
+
+        /* إطار النقوش الكلاسيكية في الزوايا */
+        .hero-section::before, .hero-section::after {
+            content: "❦";
+            position: absolute;
+            font-size: 24px;
+            color: #bfa13d;
+            opacity: 0.7;
+        }
+        .hero-section::before { top: 10px; left: 10px; }
+        .hero-section::after { top: 10px; right: 10px; transform: scaleX(-1); }
 
         /* شريط التنقل العلوي */
         header {
@@ -44,28 +60,29 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 30px;
+            padding: 10px 20px;
         }
 
         .logo-small {
             font-family: 'Cinzel', serif;
-            font-size: 24px;
-            color: #d4af37;
+            font-size: 22px;
+            color: #e2c054;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 25px;
+            gap: 20px;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #d4af37;
             font-family: 'Cinzel', serif;
-            font-size: 14px;
+            font-size: 13px;
             transition: color 0.3s;
         }
 
@@ -75,7 +92,7 @@
 
         .menu-icon {
             display: none;
-            font-size: 22px;
+            font-size: 20px;
             color: #d4af37;
             cursor: pointer;
         }
@@ -85,84 +102,90 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 600px;
-            margin: auto;
-            padding: 20px 0;
+            width: 100%;
+            padding: 10px 0;
         }
 
         .brand-title {
             font-family: 'Cinzel', serif;
-            font-size: 55px;
+            font-size: 48px;
             font-weight: 700;
-            background: linear-gradient(to bottom, #fff 20%, #d4af37 60%, #5a4510 100%);
+            background: linear-gradient(to bottom, #fffbdf 15%, #e2c054 50%, #614808 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0px 5px 15px rgba(0,0,0,0.9);
-            margin-bottom: 15px;
+            text-shadow: 0px 4px 12px rgba(0,0,0,0.9);
+            margin-bottom: 5px;
         }
 
-        .logo-graphic {
-            font-size: 80px;
-            color: #d4af37;
-            margin: 10px 0;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        /* الشعار المركب (التاج + حرف A + المقص + عمود الحلاقة) */
+        .emblem-container {
+            position: relative;
+            margin: 5px 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .emblem-img {
+            width: 200px;
+            filter: drop-shadow(0 5px 15px rgba(184, 134, 11, 0.4));
         }
 
         .subtitle {
             font-family: 'Cinzel', serif;
-            font-size: 18px;
-            letter-spacing: 4px;
-            color: #d4af37;
-            margin: 10px 0;
+            font-size: 16px;
+            letter-spacing: 5px;
+            color: #e2c054;
+            margin: 5px 0 10px;
             font-weight: 600;
         }
 
         .divider {
             color: #d4af37;
-            font-size: 14px;
-            margin: 10px 0 20px;
-            letter-spacing: 5px;
+            font-size: 12px;
+            margin: 5px 0 15px;
+            letter-spacing: 4px;
         }
 
         .description {
-            font-size: 16px;
-            color: #c5b358;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            padding: 0 20px;
+            font-size: 15px;
+            color: #d9c577;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            padding: 0 25px;
+            max-width: 400px;
         }
 
-        /* زر الحجز */
+        /* زر الحجز المطابق */
         .book-btn {
-            background: linear-gradient(to bottom, #e6c659 0%, #b8860b 50%, #614808 100%);
-            color: #110d05;
+            background: linear-gradient(to bottom, #f3d46a 0%, #b8860b 50%, #543e06 100%);
+            color: #0b0805;
             font-family: 'Cinzel', serif;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
-            padding: 14px 45px;
-            border: 2px solid #ffdf73;
-            border-radius: 4px;
+            padding: 12px 40px;
+            border: 2px solid #ffd700;
+            border-radius: 3px;
             cursor: pointer;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.7), inset 0 1px 2px rgba(255,255,255,0.5);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.8), inset 0 1px 2px rgba(255,255,255,0.6);
             transition: transform 0.2s, box-shadow 0.2s;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
         .book-btn:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
         }
 
-        /* تذييل الميزات (الخدمات الأربع بالأسفل) */
+        /* تذييل الميزات الأربعة السفلى */
         .features-footer {
             width: 100%;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
             border-top: 1px solid rgba(212, 175, 55, 0.3);
-            padding-top: 25px;
-            margin-top: 20px;
+            padding-top: 20px;
+            margin-top: 15px;
         }
 
         .feature-item {
@@ -170,34 +193,36 @@
             flex-direction: column;
             align-items: center;
             position: relative;
+            padding: 0 2px;
         }
 
         .feature-item:not(:last-child)::after {
             content: '';
             position: absolute;
             right: 0;
-            top: 15%;
-            height: 70%;
+            top: 20%;
+            height: 60%;
             width: 1px;
             background: rgba(212, 175, 55, 0.3);
         }
 
         .feature-item i {
-            font-size: 24px;
+            font-size: 20px;
             color: #d4af37;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .feature-item span {
             font-family: 'Cinzel', serif;
-            font-size: 11px;
+            font-size: 10px;
             color: #d4af37;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             text-align: center;
+            line-height: 1.2;
         }
 
-        /* التجاوب مع الهواتف والشاشات الصغيرة */
-        @media (max-width: 768px) {
+        /* التجاوب مع شاشات الهواتف الصغيرة */
+        @media (max-width: 480px) {
             nav ul {
                 display: none;
             }
@@ -209,7 +234,7 @@
             }
             .features-footer {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
+                row-gap: 15px;
             }
             .feature-item:nth-child(2)::after {
                 display: none;
@@ -220,7 +245,7 @@
 <body>
 
     <div class="hero-section">
-        <!-- شريط التنقل -->
+        <!-- شريط التنقل العلوي -->
         <header>
             <div class="logo-small">Arsalan</div>
             <nav>
@@ -236,12 +261,56 @@
             </div>
         </header>
 
-        <!-- المحتوى الأساسي -->
+        <!-- المحتوى الأساسي والشعار المركب -->
         <div class="main-content">
             <h1 class="brand-title">Arsalan</h1>
-            <div class="logo-graphic">
-                <i class="fas fa-crown"></i>
+            
+            <!-- الشعار المزخرف المطابق تماماً (تم استخدام تصميم SVG متطابق مع أيقونات المقص والعمود الملكي) -->
+            <div class="emblem-container">
+                <svg class="emblem-img" viewBox="0 0 300 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- إطار الزخرفة الخلفي والخلفية الملكية -->
+                    <path d="M150 15C170 35 195 20 210 35C225 50 240 45 250 65C260 85 280 90 285 110C290 130 275 150 280 170C285 190 270 210 250 220C230 230 210 245 190 240C170 235 150 245 130 240C110 245 90 230 70 220C50 210 35 190 40 170C45 150 30 130 35 110C40 90 60 85 70 65C80 45 95 50 110 35C125 20 150 35 150 15Z" stroke="#d4af37" stroke-width="1.5" fill="rgba(20,15,5,0.6)"/>
+                    
+                    <!-- التاج العلوي -->
+                    <path d="M150 45L162 65L178 52L175 75L125 75L122 52L138 65L150 45Z" fill="url(#goldGrad)" stroke="#ffd700" stroke-width="1"/>
+                    <circle cx="150" cy="42" r="3" fill="#ffd700"/>
+                    <circle cx="162" cy="50" r="2.5" fill="#ffd700"/>
+                    <circle cx="138" cy="50" r="2.5" fill="#ffd700"/>
+                    
+                    <!-- حرف A الكبير المزخرف في المنتصف -->
+                    <path d="M150 70L185 170H168L160 145H140L132 170H115L150 70ZM145 130H155L150 105L145 130Z" fill="url(#goldGrad)" stroke="#9a7b1c" stroke-width="1"/>
+                    
+                    <!-- مقص الحلاقة على اليسار -->
+                    <g transform="translate(60, 95) rotate(-15)">
+                        <path d="M20 10L65 75" stroke="url(#goldGrad)" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M60 10L15 75" stroke="url(#goldGrad)" stroke-width="4" stroke-linecap="round"/>
+                        <circle cx="18" cy="12" r="7" stroke="url(#goldGrad)" stroke-width="3" fill="none"/>
+                        <circle cx="18" cy="73" r="7" stroke="url(#goldGrad)" stroke-width="3" fill="none"/>
+                    </g>
+
+                    <!-- عمود الحلاقة (Barber Pole) على اليمين -->
+                    <g transform="translate(200, 90)">
+                        <path d="M10 0C18 0 22 10 22 25V75C22 90 18 100 10 100C2 100 -2 90 -2 75V25C-2 10 2 0 10 0Z" fill="url(#goldGrad)" stroke="#ffd700" stroke-width="1.5"/>
+                        <!-- خطوط العمود الملونة -->
+                        <path d="M-1 20L15 35M-3 45L17 60M-1 70L15 85" stroke="#a00" stroke-width="4"/>
+                        <path d="M5 25L21 40M3 50L23 65M5 75L21 90" stroke="#0055a5" stroke-width="4"/>
+                        <!-- قمة وقاعدة العمود -->
+                        <ellipse cx="10" cy="0" rx="8" ry="3" fill="#ffd700"/>
+                        <circle cx="10" cy="-4" r="3" fill="#ffd700"/>
+                        <ellipse cx="10" cy="100" rx="8" ry="3" fill="#ffd700"/>
+                    </g>
+
+                    <!-- تعريف التدرج اللوني الذهبي -->
+                    <defs>
+                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fff4b8"/>
+                            <stop offset="50%" stop-color="#d4af37"/>
+                            <stop offset="100%" stop-color="#614808"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
             </div>
+
             <div class="subtitle">PREMIUM BARBER</div>
             <div class="divider">♦ ❖ ♦</div>
             <p class="description">
@@ -250,7 +319,7 @@
             <button class="book-btn">BOOK NOW</button>
         </div>
 
-        <!-- الأيقونات والخدمات السفلى -->
+        <!-- الأيقونات الأربعة السفلية -->
         <div class="features-footer">
             <div class="feature-item">
                 <i class="fas fa-crown"></i>
