@@ -1,344 +1,257 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arsalan - Premium Barber</title>
-    <!-- استدعاء خطوط أنيقة -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <!-- استدعاء أيقونات FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- استيراد خطوط فيكتورية ملكية تشبه الصورة الأصلية -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Cinzel:wght@600;700;900&display=swap" rel="stylesheet">
     <style>
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
-            background-color: #0b0805;
+            background-color: #050505;
+            background-image: radial-gradient(circle at center, #181510 0%, #050505 100%);
             color: #d4af37;
-            font-family: 'Playfair Display', serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            overflow-x: hidden;
             min-height: 100vh;
-        }
-
-        /* حاوية التصميم الإطارية المطابقة تماماً للصورة */
-        .hero-section {
-            position: relative;
-            width: 100%;
-            max-width: 480px;
-            min-height: 100vh;
-            background: radial-gradient(circle at center, #241c10 0%, #100b05 60%, #060402 100%);
-            border: 12px solid #141008;
-            box-shadow: 0 0 30px rgba(0,0,0,0.9);
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 10px;
-            text-align: center;
-            overflow: hidden;
         }
 
-        /* إطار النقوش الكلاسيكية في الزوايا */
-        .hero-section::before, .hero-section::after {
-            content: "❦";
-            position: absolute;
-            font-size: 24px;
-            color: #bfa13d;
-            opacity: 0.7;
-        }
-        .hero-section::before { top: 10px; left: 10px; }
-        .hero-section::after { top: 10px; right: 10px; transform: scaleX(-1); }
-
-        /* شريط التنقل العلوي */
+        /* --- الهيدر العلوي --- */
         header {
-            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 25px 50px;
+            background: rgba(5, 5, 5, 0.9);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
 
-        .logo-small {
-            font-family: 'Cinzel', serif;
-            font-size: 22px;
-            color: #e2c054;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(to bottom, #fff2b2, #d4af37, #996515);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         nav ul {
-            list-style: none;
             display: flex;
-            gap: 20px;
+            list-style: none;
+            gap: 35px;
         }
 
         nav ul li a {
             text-decoration: none;
-            color: #d4af37;
-            font-family: 'Cinzel', serif;
-            font-size: 13px;
-            transition: color 0.3s;
+            color: #b3b3b3;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
 
         nav ul li a:hover {
-            color: #fff;
-        }
-
-        .menu-icon {
-            display: none;
-            font-size: 20px;
             color: #d4af37;
-            cursor: pointer;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
         }
 
-        /* المحتوى الرئيسي */
-        .main-content {
+        /* --- القسم الرئيسي (Hero) --- */
+        .main-hero {
+            flex: 1;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            width: 100%;
-            padding: 10px 0;
+            padding: 160px 20px 60px 20px;
         }
 
-        .brand-title {
-            font-family: 'Cinzel', serif;
-            font-size: 48px;
-            font-weight: 700;
-            background: linear-gradient(to bottom, #fffbdf 15%, #e2c054 50%, #614808 100%);
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 5.5rem;
+            font-weight: 900;
+            background: linear-gradient(to bottom, #ffffff, #f3e5ab, #b8860b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0px 4px 12px rgba(0,0,0,0.9);
+            text-transform: uppercase;
+            letter-spacing: 2px;
             margin-bottom: 5px;
         }
 
-        /* الشعار المركب (التاج + حرف A + المقص + عمود الحلاقة) */
-        .emblem-container {
-            position: relative;
-            margin: 5px 0 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* الصورة المزخرفة (الشعار الأوسط) */
+        .hero-logo-graphic {
+            width: 340px;
+            height: auto;
+            margin: 5px 0 15px 0;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
         }
 
-        .emblem-img {
-            width: 200px;
-            filter: drop-shadow(0 5px 15px rgba(184, 134, 11, 0.4));
-        }
-
-        .subtitle {
-            font-family: 'Cinzel', serif;
-            font-size: 16px;
-            letter-spacing: 5px;
-            color: #e2c054;
-            margin: 5px 0 10px;
-            font-weight: 600;
-        }
-
-        .divider {
+        .hero-subtitle {
+            font-size: 1.15rem;
+            letter-spacing: 6px;
             color: #d4af37;
-            font-size: 12px;
-            margin: 5px 0 15px;
-            letter-spacing: 4px;
-        }
-
-        .description {
-            font-size: 15px;
-            color: #d9c577;
-            line-height: 1.5;
-            margin-bottom: 25px;
-            padding: 0 25px;
-            max-width: 400px;
-        }
-
-        /* زر الحجز المطابق */
-        .book-btn {
-            background: linear-gradient(to bottom, #f3d46a 0%, #b8860b 50%, #543e06 100%);
-            color: #0b0805;
-            font-family: 'Cinzel', serif;
-            font-size: 16px;
             font-weight: 700;
-            padding: 12px 40px;
-            border: 2px solid #ffd700;
-            border-radius: 3px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.8), inset 0 1px 2px rgba(255,255,255,0.6);
-            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 25px;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: #c0c0c0;
+            max-width: 580px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+        }
+
+        /* زر الحجز الفاخر */
+        .btn-booking {
+            display: inline-block;
+            padding: 18px 50px;
+            background: linear-gradient(to bottom, #ffd700, #b8860b, #8b6508);
+            color: #050505;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            border-radius: 4px;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.35);
+            border: 1px solid #ffea85;
         }
 
-        .book-btn:hover {
-            transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        .btn-booking:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+            background: linear-gradient(to bottom, #fff, #ffd700, #b8860b);
         }
 
-        /* تذييل الميزات الأربعة السفلى */
-        .features-footer {
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            padding-top: 20px;
-            margin-top: 15px;
+        /* --- الشريط السفلي للمميزات --- */
+        .features-bar {
+            display: flex;
+            justify-content: center;
+            gap: 70px;
+            padding: 40px 20px;
+            background: rgba(10, 10, 10, 0.95);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            margin-top: auto;
         }
 
         .feature-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            padding: 0 2px;
-        }
-
-        .feature-item:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 20%;
-            height: 60%;
-            width: 1px;
-            background: rgba(212, 175, 55, 0.3);
-        }
-
-        .feature-item i {
-            font-size: 20px;
-            color: #d4af37;
-            margin-bottom: 6px;
-        }
-
-        .feature-item span {
-            font-family: 'Cinzel', serif;
-            font-size: 10px;
-            color: #d4af37;
-            letter-spacing: 0.5px;
             text-align: center;
-            line-height: 1.2;
+            color: #b3b3b3;
         }
 
-        /* التجاوب مع شاشات الهواتف الصغيرة */
-        @media (max-width: 480px) {
+        .feature-item img.icon-img {
+            width: 38px;
+            height: 38px;
+            margin-bottom: 10px;
+            filter: brightness(0) saturate(100%) invert(75%) sepia(48%) saturate(452%) hue-rotate(5deg) brightness(91%) contrast(88%);
+        }
+
+        .feature-item p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        /* --- التصميم المتجاوب للهواتف --- */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
             nav ul {
-                display: none;
+                gap: 15px;
+                font-size: 0.8rem;
             }
-            .menu-icon {
-                display: block;
+            .hero-title {
+                font-size: 3.2rem;
             }
-            .brand-title {
-                font-size: 40px;
+            .hero-logo-graphic {
+                width: 230px;
             }
-            .features-footer {
-                grid-template-columns: repeat(2, 1fr);
-                row-gap: 15px;
+            .hero-description {
+                font-size: 1.05rem;
+                padding: 0 15px;
             }
-            .feature-item:nth-child(2)::after {
-                display: none;
+            .features-bar {
+                gap: 25px;
+                padding: 25px 10px;
+            }
+            .feature-item img.icon-img {
+                width: 28px;
+                height: 28px;
+            }
+            .feature-item p {
+                font-size: 0.65rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="hero-section">
-        <!-- شريط التنقل العلوي -->
-        <header>
-            <div class="logo-small">Arsalan</div>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="menu-icon">
-                <i class="fas fa-bars"></i>
-            </div>
-        </header>
+    <!-- القائمة العلوية -->
+    <header>
+        <div class="logo-text">Arsalan</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <!-- المحتوى الأساسي والشعار المركب -->
-        <div class="main-content">
-            <h1 class="brand-title">Arsalan</h1>
-            
-            <!-- الشعار المزخرف المطابق تماماً (تم استخدام تصميم SVG متطابق مع أيقونات المقص والعمود الملكي) -->
-            <div class="emblem-container">
-                <svg class="emblem-img" viewBox="0 0 300 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- إطار الزخرفة الخلفي والخلفية الملكية -->
-                    <path d="M150 15C170 35 195 20 210 35C225 50 240 45 250 65C260 85 280 90 285 110C290 130 275 150 280 170C285 190 270 210 250 220C230 230 210 245 190 240C170 235 150 245 130 240C110 245 90 230 70 220C50 210 35 190 40 170C45 150 30 130 35 110C40 90 60 85 70 65C80 45 95 50 110 35C125 20 150 35 150 15Z" stroke="#d4af37" stroke-width="1.5" fill="rgba(20,15,5,0.6)"/>
-                    
-                    <!-- التاج العلوي -->
-                    <path d="M150 45L162 65L178 52L175 75L125 75L122 52L138 65L150 45Z" fill="url(#goldGrad)" stroke="#ffd700" stroke-width="1"/>
-                    <circle cx="150" cy="42" r="3" fill="#ffd700"/>
-                    <circle cx="162" cy="50" r="2.5" fill="#ffd700"/>
-                    <circle cx="138" cy="50" r="2.5" fill="#ffd700"/>
-                    
-                    <!-- حرف A الكبير المزخرف في المنتصف -->
-                    <path d="M150 70L185 170H168L160 145H140L132 170H115L150 70ZM145 130H155L150 105L145 130Z" fill="url(#goldGrad)" stroke="#9a7b1c" stroke-width="1"/>
-                    
-                    <!-- مقص الحلاقة على اليسار -->
-                    <g transform="translate(60, 95) rotate(-15)">
-                        <path d="M20 10L65 75" stroke="url(#goldGrad)" stroke-width="4" stroke-linecap="round"/>
-                        <path d="M60 10L15 75" stroke="url(#goldGrad)" stroke-width="4" stroke-linecap="round"/>
-                        <circle cx="18" cy="12" r="7" stroke="url(#goldGrad)" stroke-width="3" fill="none"/>
-                        <circle cx="18" cy="73" r="7" stroke="url(#goldGrad)" stroke-width="3" fill="none"/>
-                    </g>
+    <!-- المحتوى الرئيسي -->
+    <main class="main-hero">
+        <h1 class="hero-title">Arsalan</h1>
 
-                    <!-- عمود الحلاقة (Barber Pole) على اليمين -->
-                    <g transform="translate(200, 90)">
-                        <path d="M10 0C18 0 22 10 22 25V75C22 90 18 100 10 100C2 100 -2 90 -2 75V25C-2 10 2 0 10 0Z" fill="url(#goldGrad)" stroke="#ffd700" stroke-width="1.5"/>
-                        <!-- خطوط العمود الملونة -->
-                        <path d="M-1 20L15 35M-3 45L17 60M-1 70L15 85" stroke="#a00" stroke-width="4"/>
-                        <path d="M5 25L21 40M3 50L23 65M5 75L21 90" stroke="#0055a5" stroke-width="4"/>
-                        <!-- قمة وقاعدة العمود -->
-                        <ellipse cx="10" cy="0" rx="8" ry="3" fill="#ffd700"/>
-                        <circle cx="10" cy="-4" r="3" fill="#ffd700"/>
-                        <ellipse cx="10" cy="100" rx="8" ry="3" fill="#ffd700"/>
-                    </g>
+        <!-- صورة الشعار المزخرف (تأكد من وضع ملف الصورة بنفس المجلد باسم logo_graphic.png) -->
+        <img src="logo_graphic.png" alt="Arsalan Crest" class="hero-logo-graphic">
 
-                    <!-- تعريف التدرج اللوني الذهبي -->
-                    <defs>
-                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#fff4b8"/>
-                            <stop offset="50%" stop-color="#d4af37"/>
-                            <stop offset="100%" stop-color="#614808"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-            </div>
+        <h2 class="hero-subtitle">PREMIUM BARBER</h2>
 
-            <div class="subtitle">PREMIUM BARBER</div>
-            <div class="divider">♦ ❖ ♦</div>
-            <p class="description">
-                Precision grooming. Premium style. Professional barbering in Casablanca.
-            </p>
-            <button class="book-btn">BOOK NOW</button>
+        <p class="hero-description">
+            Precision grooming. Premium style. Professional barbering in premium barber.
+        </p>
+
+        <a href="#book" class="btn-booking">Book Now</a>
+    </main>
+
+    <!-- شريط الأيقونات السفلية -->
+    <section class="features-bar">
+        <div class="feature-item">
+            <img src="https://img.icons8.com/fluency-systems-regular/48/c5a059/crown.png" alt="Crown" class="icon-img">
+            <p>Premium Service</p>
         </div>
-
-        <!-- الأيقونات الأربعة السفلية -->
-        <div class="features-footer">
-            <div class="feature-item">
-                <i class="fas fa-crown"></i>
-                <span>PREMIUM SERVICE</span>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-cut"></i>
-                <span>EXPERT BARBERS</span>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-pump-soap"></i>
-                <span>QUALITY PRODUCTS</span>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-clock"></i>
-                <span>ON TIME SERVICE</span>
-            </div>
+        <div class="feature-item">
+            <img src="https://img.icons8.com/fluency-systems-regular/48/c5a059/straight-razor.png" alt="Razor" class="icon-img">
+            <p>Expert Barbers</p>
         </div>
-    </div>
+        <div class="feature-item">
+            <img src="https://img.icons8.com/fluency-systems-regular/48/c5a059/lotion.png" alt="Product" class="icon-img">
+            <p>Quality Products</p>
+        </div>
+        <div class="feature-item">
+            <img src="https://img.icons8.com/fluency-systems-regular/48/c5a059/clock--v1.png" alt="Clock" class="icon-img">
+            <p>On Time Service</p>
+        </div>
+    </section>
 
 </body>
 </html>
