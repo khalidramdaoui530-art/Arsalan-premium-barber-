@@ -1,1 +1,136 @@
-B552DA39-9ECA-4720-BA1E-8FBDF47EA9E1.png
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsalan | Premium Barber</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #0c0c0c;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background-image: radial-gradient(circle, #1a1a1a 0%, #0c0c0c 100%);
+        }
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            max-width: 1200px;
+        }
+        .logo-nav {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: #d4af37;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        nav a {
+            color: #c5a059;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #fff;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: auto;
+        }
+        .brand-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+        .brand-subtitle {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+        .description {
+            font-size: 1rem;
+            color: #a0a0a0;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .book-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+            color: #0c0c0c;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .book-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            .brand-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-nav">ARSALAN</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <h1 class="brand-title">ARSALAN</h1>
+        <div class="brand-subtitle">PREMIUM BARBER</div>
+        <p class="description">Precision grooming. Premium style. Professional barbering in Casablanca.</p>
+        <a href="https://wa.me/" class="book-btn">BOOK NOW</a>
+    </div>
+
+    <footer>
+        &copy; 2026 Arsalan Barbershop. All rights reserved.
+    </div>
+
+</body>
