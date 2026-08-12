@@ -3,18 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arsalan Premium Barber | Casablanca</title>
-    <!-- Google Fonts for Gothic/Luxury look -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Arsalan - Premium Barber</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --bg-color: #0b0b0b;
-            --gold-primary: #d4af37;
-            --gold-light: #f3e5ab;
-            --gold-dark: #997a15;
-            --text-color: #e0e0e0;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -22,245 +14,265 @@
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: #0b0805;
+            color: #d4af37;
             font-family: 'Playfair Display', serif;
-            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        /* Header / Navbar */
+        .phone-frame {
+            width: 100%;
+            max-width: 414px;
+            background: linear-gradient(135deg, #120e09 0%, #050403 50%, #0b0805 100%);
+            border: 12px solid #1a1510;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.1);
+            position: relative;
+        }
+
+        /* Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 25px;
-            background: rgba(11, 11, 11, 0.95);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
         }
 
-        .logo-text {
+        .logo-small {
             font-family: 'Cinzel', serif;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
-            color: var(--gold-primary);
-            text-decoration: none;
+            color: #d4af37;
             letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
-        .nav-links {
-            display: none;
-            gap: 20px;
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
         }
 
-        .nav-links a {
-            color: var(--text-color);
+        nav ul li a {
             text-decoration: none;
-            font-size: 14px;
+            color: #c5a028;
+            font-size: 13px;
+            font-family: 'Cinzel', serif;
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--gold-primary);
+        nav ul li a:hover {
+            color: #fff;
         }
 
         .menu-btn {
-            font-size: 22px;
-            color: var(--gold-primary);
-            cursor: pointer;
             background: none;
             border: none;
-        }
-
-        @media(min-width: 768px) {
-            .nav-links {
-                display: flex;
-            }
-            .menu-btn {
-                display: none;
-            }
+            color: #d4af37;
+            font-size: 18px;
+            cursor: pointer;
+            display: none;
         }
 
         /* Hero Section */
         .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             text-align: center;
-            padding: 100px 20px 50px 20px;
-            background: radial-gradient(circle, #2a220f 0%, #0b0b0b 80%);
-            border: 15px solid transparent;
-            border-image: linear-gradient(to bottom, #d4af37, #4a3b0c, #d4af37) 1;
-            margin: 10px;
+            padding: 30px 20px 40px;
+            position: relative;
         }
 
-        .hero-title {
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .main-title {
             font-family: 'Cinzel', serif;
-            font-size: 42px;
-            font-weight: 900;
-            color: var(--gold-light);
-            text-transform: uppercase;
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(to bottom, #f3e5ab 0%, #c5a028 50%, #8a6f1d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+            text-shadow: 0 4px 10px rgba(0,0,0,0.6);
         }
 
-        .hero-logo {
-            width: 220px;
-            max-width: 80%;
-            height: auto;
-            margin: 15px 0;
-            filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.3));
+        .emblem-container {
+            margin: 15px auto 20px;
+            position: relative;
+            width: 140px;
+            height: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .emblem-container i {
+            font-size: 90px;
+            background: linear-gradient(to bottom, #f3e5ab, #997a15);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.7));
         }
 
         .subtitle {
             font-family: 'Cinzel', serif;
-            font-size: 14px;
+            font-size: 16px;
             letter-spacing: 3px;
-            color: var(--gold-primary);
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .ornament-divider {
+            color: #c5a028;
+            font-size: 14px;
             margin-bottom: 20px;
-            text-transform: uppercase;
+            opacity: 0.8;
         }
 
-        .divider {
-            color: var(--gold-primary);
-            font-size: 18px;
-            margin: 10px 0 20px 0;
-        }
-
-        .hero-desc {
-            font-size: 15px;
+        .description {
+            font-size: 14px;
             line-height: 1.6;
-            max-width: 320px;
-            color: #d1d1d1;
-            margin-bottom: 30px;
+            color: #bfa878;
+            max-width: 300px;
+            margin: 0 auto 30px;
         }
 
-        /* Book Now Button */
+        /* Book Button */
         .book-btn {
             display: inline-block;
-            padding: 14px 45px;
-            background: linear-gradient(to bottom, #f3e5ab, #b89728);
-            color: #0b0b0b;
+            width: 85%;
+            padding: 14px 0;
+            background: linear-gradient(to bottom, #e6c66d 0%, #b89228 50%, #806012 100%);
+            color: #0d0a06;
             font-family: 'Cinzel', serif;
             font-size: 16px;
             font-weight: 700;
             text-decoration: none;
-            text-transform: uppercase;
-            border-radius: 2px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-bottom: 40px;
-            border: 1px solid #fff;
+            border-radius: 4px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+            border: 1px solid #5a430a;
+            transition: transform 0.2s;
+            margin-bottom: 35px;
+            letter-spacing: 1px;
         }
 
-        .book-btn:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        .book-btn:active {
+            transform: scale(0.98);
         }
 
-        /* Features / Icons Section */
+        /* Features Footer Grid */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            width: 100%;
-            max-width: 450px;
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            padding-top: 30px;
-        }
-
-        @media(min-width: 600px) {
-            .features-grid {
-                grid-template-columns: repeat(4, 1fr);
-                max-width: 800px;
-            }
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            background: rgba(10, 8, 5, 0.6);
+            padding: 20px 5px;
         }
 
         .feature-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
+            padding: 0 5px;
+            border-right: 1px solid rgba(212, 175, 55, 0.1);
         }
 
-        .feature-item img, .feature-item svg {
-            width: 32px;
-            height: 32px;
-            margin-bottom: 10px;
-            fill: var(--gold-primary);
+        .feature-item:last-child {
+            border-right: none;
         }
-        
-        .feature-icon {
-            font-size: 28px;
+
+        .feature-item i {
+            font-size: 18px;
+            color: #d4af37;
             margin-bottom: 8px;
         }
 
-        .feature-text {
+        .feature-item span {
+            display: block;
             font-family: 'Cinzel', serif;
-            font-size: 11px;
-            letter-spacing: 1px;
-            color: var(--gold-light);
-            text-transform: uppercase;
-            line-height: 1.4;
+            font-size: 9px;
+            color: #bfa878;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                display: none;
+            }
+            .menu-btn {
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <a href="#" class="logo-text">Arsalan</a>
-        <nav class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Services</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-        <button class="menu-btn">☰</button>
-    </header>
+    <div class="phone-frame">
+        <!-- Header -->
+        <header>
+            <div class="logo-small">Arsalan</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+        </header>
 
-    <!-- Hero Section -->
-    <main class="hero">
-        <h1 class="hero-title">Arsalan</h1>
-        
-        <!-- الصورة المطابقة تماماً للصورة التي رفعتها -->
-        <img src="B552DA39-9ECA-4720-BA1E-8FBDF47EA9E1.png" alt="Arsalan Premium Barber Emblem" class="hero-logo">
-        
-        <div class="subtitle">Premium Barber</div>
-        
-        <div class="divider">❖ ❖ ❖</div>
-        
-        <p class="hero-desc">Precision grooming. Premium style. Professional barbering in Casablanca.</p>
-        
-        <a href="#book" class="book-btn">Book Now</a>
+        <!-- Hero Content -->
+        <section class="hero">
+            <h1 class="main-title">Arsalan</h1>
+            
+            <div class="emblem-container">
+                <i class="fa-solid fa-crown"></i>
+            </div>
 
-        <!-- Features Icons Footer Grid -->
+            <div class="subtitle">PREMIUM BARBER</div>
+            
+            <div class="ornament-divider">❖ ❦ ❖</div>
+
+            <p class="description">
+                Precision grooming. Premium style. Professional barbering in Casablanca.
+            </p>
+
+            <a href="#" class="book-btn">BOOK NOW</a>
+        </section>
+
+        <!-- Features Grid -->
         <div class="features-grid">
             <div class="feature-item">
-                <div class="feature-icon">👑</div>
-                <div class="feature-text">Premium Service</div>
+                <i class="fa-solid fa-crown"></i>
+                <span>PREMIUM SERVICE</span>
             </div>
             <div class="feature-item">
-                <div class="feature-icon">✂️</div>
-                <div class="feature-text">Expert Barbers</div>
+                <i class="fa-solid fa-scissors"></i>
+                <span>EXPERT BARBERS</span>
             </div>
             <div class="feature-item">
-                <div class="feature-icon">🧴</div>
-                <div class="feature-text">Quality Products</div>
+                <i class="fa-solid fa-spray-can"></i>
+                <span>QUALITY PRODUCTS</span>
             </div>
             <div class="feature-item">
-                <div class="feature-icon">⏰</div>
-                <div class="feature-text">On Time Service</div>
+                <i class="fa-solid fa-clock"></i>
+                <span>ON TIME SERVICE</span>
             </div>
         </div>
-    </main>
+    </div>
 
 </body>
 </html>
