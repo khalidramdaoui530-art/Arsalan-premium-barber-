@@ -3,134 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arsalan | Premium Barber</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <title>Arsalan Premium Barber | Casablanca</title>
+    <!-- Google Fonts for Gothic/Luxury look -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #0b0b0b;
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #997a15;
+            --text-color: #e0e0e0;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            background-color: #0c0c0c;
-            color: #d4af37;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             font-family: 'Playfair Display', serif;
+            overflow-x: hidden;
+        }
+
+        /* Header / Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            background: rgba(11, 11, 11, 0.95);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gold-primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-primary);
+        }
+
+        .menu-btn {
+            font-size: 22px;
+            color: var(--gold-primary);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        @media(min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+            .menu-btn {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 20px;
-            background-image: radial-gradient(circle, #1a1a1a 0%, #0c0c0c 100%);
+            padding: 100px 20px 50px 20px;
+            background: radial-gradient(circle, #2a220f 0%, #0b0b0b 80%);
+            border: 15px solid transparent;
+            border-image: linear-gradient(to bottom, #d4af37, #4a3b0c, #d4af37) 1;
+            margin: 10px;
         }
-        header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            max-width: 1200px;
-        }
-        .logo-nav {
+
+        .hero-title {
             font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            color: #d4af37;
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-logo {
+            width: 220px;
+            max-width: 80%;
+            height: auto;
+            margin: 15px 0;
+            filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.3));
+        }
+
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            letter-spacing: 3px;
+            color: var(--gold-primary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .divider {
+            color: var(--gold-primary);
+            font-size: 18px;
+            margin: 10px 0 20px 0;
+        }
+
+        .hero-desc {
+            font-size: 15px;
+            line-height: 1.6;
+            max-width: 320px;
+            color: #d1d1d1;
+            margin-bottom: 30px;
+        }
+
+        /* Book Now Button */
+        .book-btn {
+            display: inline-block;
+            padding: 14px 45px;
+            background: linear-gradient(to bottom, #f3e5ab, #b89728);
+            color: #0b0b0b;
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
             font-weight: 700;
-            letter-spacing: 2px;
-        }
-        nav a {
-            color: #c5a059;
             text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.9rem;
-            transition: color 0.3s;
+            text-transform: uppercase;
+            border-radius: 2px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 40px;
+            border: 1px solid #fff;
         }
-        nav a:hover {
-            color: #fff;
+
+        .book-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
         }
-        .main-content {
+
+        /* Features / Icons Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            width: 100%;
+            max-width: 450px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding-top: 30px;
+        }
+
+        @media(min-width: 600px) {
+            .features-grid {
+                grid-template-columns: repeat(4, 1fr);
+                max-width: 800px;
+            }
+        }
+
+        .feature-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 600px;
-            margin: auto;
+            text-align: center;
         }
-        .brand-title {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            color: #d4af37;
+
+        .feature-item img, .feature-item svg {
+            width: 32px;
+            height: 32px;
             margin-bottom: 10px;
-            letter-spacing: 3px;
+            fill: var(--gold-primary);
         }
-        .brand-subtitle {
-            font-size: 1.2rem;
-            color: #e0e0e0;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
+        
+        .feature-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
         }
-        .description {
-            font-size: 1rem;
-            color: #a0a0a0;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-        .book-btn {
-            background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
-            color: #0c0c0c;
-            padding: 15px 40px;
-            font-size: 1.1rem;
+
+        .feature-text {
             font-family: 'Cinzel', serif;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .book-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
-        }
-        footer {
-            margin-top: 20px;
-            font-size: 0.8rem;
-            color: #666;
-        }
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 10px;
-            }
-            nav a {
-                margin: 0 10px;
-            }
-            .brand-title {
-                font-size: 2.2rem;
-            }
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            line-height: 1.4;
         }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
-        <div class="logo-nav">ARSALAN</div>
-        <nav>
+        <a href="#" class="logo-text">Arsalan</a>
+        <nav class="nav-links">
             <a href="#">Home</a>
             <a href="#">Services</a>
             <a href="#">About</a>
             <a href="#">Contact</a>
         </nav>
+        <button class="menu-btn">☰</button>
     </header>
 
-    <div class="main-content">
-        <h1 class="brand-title">ARSALAN</h1>
-        <div class="brand-subtitle">PREMIUM BARBER</div>
-        <p class="description">Precision grooming. Premium style. Professional barbering in Casablanca.</p>
-        <a href="https://wa.me/" class="book-btn">BOOK NOW</a>
-    </div>
+    <!-- Hero Section -->
+    <main class="hero">
+        <h1 class="hero-title">Arsalan</h1>
+        
+        <!-- الصورة المطابقة تماماً للصورة التي رفعتها -->
+        <img src="B552DA39-9ECA-4720-BA1E-8FBDF47EA9E1.png" alt="Arsalan Premium Barber Emblem" class="hero-logo">
+        
+        <div class="subtitle">Premium Barber</div>
+        
+        <div class="divider">❖ ❖ ❖</div>
+        
+        <p class="hero-desc">Precision grooming. Premium style. Professional barbering in Casablanca.</p>
+        
+        <a href="#book" class="book-btn">Book Now</a>
 
-    <footer>
-        &copy; 2026 Arsalan Barbershop. All rights reserved.
-    </div>
+        <!-- Features Icons Footer Grid -->
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">👑</div>
+                <div class="feature-text">Premium Service</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✂️</div>
+                <div class="feature-text">Expert Barbers</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🧴</div>
+                <div class="feature-text">Quality Products</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">⏰</div>
+                <div class="feature-text">On Time Service</div>
+            </div>
+        </div>
+    </main>
 
 </body>
+</html>
