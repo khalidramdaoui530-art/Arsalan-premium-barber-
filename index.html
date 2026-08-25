@@ -1,170 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsalan - Premium Barber</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<title>Arsalan Premium Barber</title>
+        body {
+            background-color: #0b0704;
+            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-<link rel="stylesheet" href="style.css">
+        .phone-container {
+            width: 100%;
+            max-width: 420px;
+            background: linear-gradient(135deg, #110c07 0%, #050302 100%);
+            border: 2px solid #2a2012;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #d4af37;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
 
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #c5b358;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #fff;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 18px;
+            color: #d4af37;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        .main-content {
+            text-align: center;
+            padding: 25px 10px;
+        }
+
+        .main-title {
+            font-family: 'Cinzel', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #f3e5ab;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.9), 0 0 15px rgba(212,175,55,0.4);
+            margin-bottom: 10px;
+        }
+
+        .emblem-container {
+            margin: 15px auto;
+            width: 140px;
+            height: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .emblem-container i {
+            font-size: 80px;
+            color: #d4af37;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            letter-spacing: 3px;
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .divider {
+            color: #d4af37;
+            font-size: 12px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #c5b358;
+            margin-bottom: 25px;
+            padding: 0 15px;
+        }
+
+        /* Button */
+        .book-btn {
+            display: inline-block;
+            background: linear-gradient(to bottom, #d4af37 0%, #8a6f1d 100%);
+            color: #0b0704;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 12px 35px;
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid #ffdf73;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            letter-spacing: 1px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 30px;
+        }
+
+        .book-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Features Footer Icons */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .feature-item {
+            flex: 1;
+            position: relative;
+        }
+
+        .feature-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 10%;
+            height: 80%;
+            width: 1px;
+            background-color: rgba(212, 175, 55, 0.2);
+        }
+
+        .feature-item i {
+            font-size: 20px;
+            color: #d4af37;
+            margin-bottom: 8px;
+        }
+
+        .feature-item p {
+            font-family: 'Cinzel', serif;
+            font-size: 9px;
+            color: #c5b358;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+
+        /* Responsive for mobile screens */
+        @media (max-width: 480px) {
+            nav ul {
+                display: none; /* يمكن إظهار قائمة منسدلة عبر الجافاسكريبت إن رغبت */
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-
-<div class="logo">
-<h2>Arsalan</h2>
-</div>
-
-<nav>
-
-<ul>
-
-<li><a href="#">Home</a></li>
-
-<li><a href="#services">Services</a></li>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</nav>
-
-<div class="menu">
-
-<i class="fas fa-bars"></i>
-
-</div>
-
-</header>
-
-
-<section class="hero">
-
-<div class="overlay"></div>
-
-<div class="hero-content">
-
-<h1>Arsalan</h1>
-
-<h3>PREMIUM BARBER</h3>
-
-<p>
-Precision Grooming.<br>
-Premium Style.<br>
-Professional Barbering in Casablanca.
-</p>
-
-<a href="#" class="btn">
-
-BOOK NOW
-
-</a>
-
-</div>
-
-</section>
-
-
-
-<section id="services" class="features">
-
-<div class="box">
-
-<i class="fas fa-crown"></i>
-
-<h3>Premium Service</h3>
-
-<p>Luxury experience for every customer.</p>
-
-</div>
-
-<div class="box">
-
-<i class="fas fa-cut"></i>
-
-<h3>Expert Barbers</h3>
-
-<p>Professional haircut & beard styling.</p>
-
-</div>
-
-<div class="box">
-
-<i class="fas fa-pump-soap"></i>
-
-<h3>Quality Products</h3>
-
-<p>Only premium products are used.</p>
-
-</div>
-
-<div class="box">
-
-<i class="far fa-clock"></i>
-
-<h3>On Time</h3>
-
-<p>Your appointment always respected.</p>
-
-</div>
-
-</section>
-
-
-
-<section id="about" class="about">
-
-<h2>ABOUT US</h2>
-
-<p>
-
-Welcome to Arsalan Premium Barber.
-
-Where luxury meets precision.
-
-Experience premium grooming in Casablanca.
-
-</p>
-
-</section>
-
-
-
-<section id="contact" class="contact">
-
-<h2>CONTACT</h2>
-
-<p>Casablanca, Morocco</p>
-
-<p>+212 600000000</p>
-
-<p>info@arsalanbarber.com</p>
-
-</section>
-
-
-
-<footer>
-
-<p>
-
-© 2026 Arsalan Premium Barber
-
-</p>
-
-</footer>
-
-<script src="script.js"></script>
+    <div class="phone-container">
+        <!-- Header -->
+        <header>
+            <div class="logo-text">Arsalan</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <h1 class="main-title">Arsalan</h1>
+            
+            <div class="emblem-container">
+                <!-- استخدام أيقونة تاج تعبيرية بدل الصورة -->
+                <i class="fas fa-crown"></i>
+            </div>
+
+            <div class="subtitle">PREMIUM BARBER</div>
+            
+            <div class="divider">
+                <i class="fas fa-asterisk"></i> ❖ <i class="fas fa-asterisk"></i>
+            </div>
+
+            <p class="description">
+                Precision grooming. Premium style. Professional barbering in Casablanca.
+            </p>
+
+            <a href="#" class="book-btn">BOOK NOW</a>
+        </div>
+
+        <!-- Features Icons Footer -->
+        <div class="features">
+            <div class="feature-item">
+                <i class="fas fa-crown"></i>
+                <p>PREMIUM<br>SERVICE</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-cut"></i>
+                <p>EXPERT<br>BARBERS</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-spray-can"></i>
+                <p>QUALITY<br>PRODUCTS</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-clock"></i>
+                <p>ON TIME<br>SERVICE</p>
+            </div>
+        </div>
+    </div>
 
 </body>
-
 </html>
