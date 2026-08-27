@@ -1,272 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arsalan - Premium Barber</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-background:#0b0704;
-color:#d4af37;
-font-family:'Playfair Display',serif;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-}
-
-.phone-container{
-width:100%;
-max-width:420px;
-background:linear-gradient(135deg,#110c07,#050302);
-border:2px solid #2a2012;
-box-shadow:0 0 30px rgba(0,0,0,.9);
-padding:20px;
-display:flex;
-flex-direction:column;
-gap:20px;
-}
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding-bottom:15px;
-border-bottom:1px solid rgba(212,175,55,.2);
-}
-
-.logo-text{
-font-family:'Cinzel',serif;
-font-size:22px;
-font-weight:700;
-}
-
-nav ul{
-display:flex;
-list-style:none;
-gap:15px;
-}
-
-nav ul li a{
-text-decoration:none;
-color:#d4af37;
-font-size:13px;
-}
-
-.menu-icon{
-display:none;
-font-size:18px;
-}
-
-.main-content{
-text-align:center;
-}
-
-.main-title{
-font-family:'Cinzel',serif;
-font-size:42px;
-color:#f3e5ab;
-margin-bottom:15px;
-}
-
-.emblem-container i{
-font-size:80px;
-margin:20px 0;
-}
-
-.subtitle{
-font-family:'Cinzel',serif;
-letter-spacing:3px;
-margin-bottom:10px;
-}
-
-.divider{
-margin-bottom:15px;
-}
-
-.description{
-color:#c5b358;
-line-height:1.6;
-margin-bottom:25px;
-}
-
-.book-btn{
-display:inline-block;
-background:linear-gradient(to bottom,#d4af37,#8a6f1d);
-color:#111;
-padding:12px 35px;
-text-decoration:none;
-font-family:'Cinzel',serif;
-font-weight:bold;
-border-radius:5px;
-margin-bottom:30px;
-transition:.3s;
-}
-
-.book-btn:hover{
-transform:scale(1.03);
-}
-
-.services{
-margin-top:10px;
-border-top:1px solid rgba(212,175,55,.2);
-padding-top:20px;
-}
-
-.services h2{
-font-family:'Cinzel',serif;
-font-size:20px;
-text-align:center;
-margin-bottom:15px;
-}
-
-.service{
-display:flex;
-justify-content:space-between;
-padding:12px 0;
-border-bottom:1px solid rgba(212,175,55,.1);
-font-size:16px;
-}
-
-.hours{
-text-align:center;
-margin-top:20px;
-padding:15px;
-border:1px solid rgba(212,175,55,.2);
-border-radius:5px;
-}
-
-.hours h3{
-font-family:'Cinzel',serif;
-margin-bottom:8px;
-}
-
-.features{
-display:flex;
-justify-content:space-around;
-border-top:1px solid rgba(212,175,55,.2);
-padding-top:20px;
-text-align:center;
-}
-
-.feature-item{
-flex:1;
-}
-
-.feature-item i{
-font-size:20px;
-margin-bottom:8px;
-}
-
-.feature-item p{
-font-size:10px;
-font-family:'Cinzel',serif;
-}
-
-@media(max-width:480px){
-nav ul{
-display:none;
-}
-.menu-icon{
-display:none; /* تم إخفاؤها مؤقتاً لتجنب أي مشاكل تفاعلية حالياً */
-}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsalan - Premium Barber</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
 
-<div class="phone-container">
+    <div class="website-container">
+        <header class="navbar">
+            <div class="logo-text">Arsalan</div>
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Services</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="menu-icon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
 
-<header>
-<div class="logo-text">Arsalan</div>
-<nav>
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Services</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
-</nav>
-</header>
+        <main class="hero-section">
+            <div class="corner-ornament top-left"></div>
+            <div class="corner-ornament top-right"></div>
+            
+            <div class="hero-content">
+                <h1 class="main-title">Arsalan</h1>
+                
+                <div class="emblem-container">
+                    <div class="ornament-graphic">
+                        <i class="fa-solid fa-scissors sciss"></i>
+                        <span class="central-letter">A</span>
+                        <div class="barber-pole"></div>
+                    </div>
+                </div>
 
-<div class="main-content">
+                <h2 class="subtitle">PREMIUM BARBER</h2>
+                
+                <p class="description">
+                    Precision grooming. Premium style. Professional barbering in Casablanca.
+                </p>
 
-<h1 class="main-title">Arsalan</h1>
+                <a href="#book" class="book-btn">BOOK NOW</a>
 
-<div class="emblem-container">
-<i class="fas fa-crown"></i>
-</div>
+                <div class="features-bar">
+                    <div class="feature-item">
+                        <i class="fa-solid fa-crown"></i>
+                        <span>PREMIUM SERVICE</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>EXPERT BARBERS</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-bottle-droplet"></i>
+                        <span>QUALITY PRODUCTS</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>ON TIME SERVICE</span>
+                    </div>
+                </div>
+            </div>
 
-<div class="subtitle">PREMIUM BARBER</div>
-
-<div class="divider">
-<i class="fas fa-asterisk"></i> ❖ <i class="fas fa-asterisk"></i>
-</div>
-
-<p class="description">
-Precision grooming.<br>
-Premium style.<br>
-Professional barbering in Casablanca.
-</p>
-
-<a class="book-btn" href="https://wa.me/212617375671?text=Hello%20Arsalan,%20I%20would%20like%20to%20book%20an%20appointment." target="_blank">
-<i class="fab fa-whatsapp"></i> BOOK NOW
-</a>
-
-<div class="services">
-<h2>OUR SERVICES</h2>
-<div class="service">
-<span>Haircut</span>
-<span>80 DH</span>
-</div>
-<div class="service">
-<span>Beard</span>
-<span>40 DH</span>
-</div>
-<div class="service">
-<span>Haircut + Beard</span>
-<span>120 DH</span>
-</div>
-</div>
-
-<div class="hours">
-<h3><i class="fas fa-clock"></i> Opening Hours</h3>
-<p>10:00 AM - 9:00 PM</p>
-</div>
-
-</div>
-
-<div class="features">
-<div class="feature-item">
-<i class="fas fa-crown"></i>
-<p>PREMIUM<br>SERVICE</p>
-</div>
-<div class="feature-item">
-<i class="fas fa-cut"></i>
-<p>EXPERT<br>BARBERS</p>
-</div>
-<div class="feature-item">
-<i class="fas fa-spray-can"></i>
-<p>QUALITY<br>PRODUCTS</p>
-</div>
-<div class="feature-item">
-<i class="fas fa-clock"></i>
-<p>10 AM<br>9 PM</p>
-</div>
-</div>
-
-</div>
+            <div class="corner-ornament bottom-left"></div>
+            <div class="corner-ornament bottom-right"></div>
+        </main>
+    </div>
 
 </body>
 </html>
