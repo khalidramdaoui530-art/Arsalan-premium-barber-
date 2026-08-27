@@ -1,168 +1,92 @@
-
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arsalan | Premium Barber</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <title>Arsalan Barber</title>
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body, html {
-            height: 100%;
-            overflow: hidden;
-            font-family: 'Playfair Display', serif;
-            color: #d4af37;
+
+        body {
+            background: #0b0b0b;
+            color: #e5c158;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
         }
-        /* كود تشغيل الفيديو في الخلفية بشكل ملء الشاشة */
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            z-index: -1;
-            filter: brightness(0.4); /* تعتيم خفيف لتبرز النصوص فوق الفيديو */
-        }
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
+
+        .hero {
             width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6); /* طبقة سوداء شفافة لزيادة وضوح الكتابة */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
             text-align: center;
-            padding: 20px;
         }
-        header {
+
+        .hero img {
             width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            max-width: 1200px;
-            z-index: 2;
+            max-width: 480px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            object-fit: cover;
         }
-        .logo-nav {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            color: #d4af37;
-            font-weight: 700;
-            letter-spacing: 2px;
+
+        .content {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            text-align: center;
         }
-        nav a {
-            color: #c5a059;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #fff;
-        }
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 600px;
-            margin: auto;
-            z-index: 2;
-        }
-        .brand-title {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            color: #d4af37;
-            margin-bottom: 10px;
+
+        h1 {
+            font-size: 32px;
             letter-spacing: 3px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            margin-bottom: 10px;
         }
-        .brand-subtitle {
-            font-size: 1.2rem;
-            color: #e0e0e0;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
+
+        p {
+            color: #aaa;
+            font-size: 16px;
+            margin-bottom: 25px;
         }
-        .description {
-            font-size: 1.1rem;
-            color: #d4af37;
-            margin-bottom: 40px;
-            line-height: 1.6;
-            font-weight: 600;
-        }
-        .book-btn {
-            background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
-            color: #0c0c0c;
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
+
+        .button {
+            display: inline-block;
+            padding: 14px 30px;
+            background: #e5c158;
+            color: #0b0b0b;
             text-decoration: none;
-            border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: bold;
+            border-radius: 5px;
         }
-        .book-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.7);
-        }
-        footer {
-            margin-top: 20px;
-            font-size: 0.8rem;
-            color: #a0a0a0;
-            z-index: 2;
-        }
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 10px;
-            }
-            nav a {
-                margin: 0 10px;
-            }
-            .brand-title {
-                font-size: 2.2rem;
-            }
+
+        .button:hover {
+            opacity: 0.85;
         }
     </style>
 </head>
+
 <body>
 
-    <!-- فيديو الخلفية (ضع رابط الفيديو الخاص بك أو اسم الملف هنا) -->
-    <video autoplay muted loop class="video-background">
-        <source src="http://googleusercontent.com/generated_video_content/2012491521410826399" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
+    <section class="hero">
+        <img 
+            src="B552DA39-9ECA-4720-BA1E-8FBDF47EA9E1.png"
+            alt="Arsalan Premium Barber"
+        >
+    </section>
 
-    <div class="overlay">
-        <header>
-            <div class="logo-nav">ARSALAN</div>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">Services</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </nav>
-        </header>
+    <section class="content">
+        <h1>ARSALAN</h1>
 
-        <div class="main-content">
-            <h1 class="brand-title">ARSALAN</h1>
-            <div class="brand-subtitle">PREMIUM BARBER</div>
-            <p class="description">Precision grooming. Premium style. Professional barbering. Premium Barber 💈</p>
-            <a href="https://wa.me/" class="book-btn">BOOK NOW</a>
-        </div>
+        <p>Premium Barber</p>
 
-        <footer>
-            &copy; 2026 Arsalan Barbershop. All rights reserved.
-        </footer>
-    </div>
+        <a class="button" href="https://wa.me/212XXXXXXXXX">
+            BOOK NOW
+        </a>
+    </section>
 
 </body>
 </html>
