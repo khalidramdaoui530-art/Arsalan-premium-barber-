@@ -281,6 +281,146 @@
     </video>
 </div>
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>قائمة الملفات</title>
+    <style>
+        body {
+            background-color: #12161f;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .file-list {
+            background-color: #1a1f2c;
+            border: 1px solid #2a3245;
+            border-radius: 4px;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            border-bottom: 1px solid #2a3245;
+            color: #ffffff;
+        }
+        .file-item:last-child {
+            border-bottom: none;
+        }
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .file-icon {
+            width: 20px;
+            height: 24px;
+            border: 1.5px solid #a0aec0;
+            border-radius: 2px;
+            position: relative;
+        }
+        /* تأثير زاوية الملف المطوية */
+        .file-icon::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 6px;
+            height: 6px;
+            background: linear-gradient(135deg, transparent 50%, #a0aec0 50%);
+        }
+        .file-name {
+            font-size: 15px;
+            color: #e2e8f0;
+        }
+        .file-time {
+            font-size: 14px;
+            color: #a0aec0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="file-list">
+    <div class="file-item">
+        <div class="file-info">
+            <div class="file-icon"></div>
+            <span class="file-name">IMG_0127.jpeg</span>
+        </div>
+        <span class="file-time">18 hours ago</span>
+    </div>
+    <div class="file-item">
+        <div class="file-info">
+            <div class="file-icon"></div>
+            <span class="file-name">IMG_0128.jpeg</span>
+        </div>
+        <span class="file-time">18 hours ago</span>
+    </div>
+    <div class="file-item">
+        <div class="file-info">
+            <div class="file-icon"></div>
+            <span class="file-name">IMG_0129.jpeg</span>
+        </div>
+        <span class="file-time">18 hours ago</span>
+    </div>
+    <div class="file-item">
+        <div class="file-info">
+            <div class="file-icon"></div>
+            <span class="file-name">IMG_0130.jpeg</span>
+        </div>
+        <span class="file-time">18 hours ago</span>
+    </div>
+    <div class="file-item">
+        <div class="file-info">
+            <div class="file-icon"></div>
+            <span class="file-name">IMG_0131.jpeg</span>
+        </div>
+        <span class="file-time">18 hours ago</span>
+    </div>
+    <div class="file-item">
+        <div class="file-info">
+            <div class="file-icon"></div>
+            <span class="file-name">IMG_0132.jpeg</span>
+        </div>
+        <span class="file-time">18 hours ago</span>
+    </div>
+    <div class="file-item">
+        <div class="file-info">
+            <div class="file-icon"></div>
+            <span class="file-name">IMG_0133.jpeg</span>
+        </div>
+        <span class="file-time">18 hours ago</span>
+    </div>
+    <div class="file-item">
+        <div class="file-info">
+            <div class="file-icon"></div>
+            <span class="file-name">IMG_0135.jpeg</span>
+        </div>
+        <span class="file-time">18 hours ago</span>
+    </div>
+    <div class="file-item">
+        <div class="file-info">
+            <div class="file-icon"></div>
+            <span class="file-name">IMG_0136.jpeg</span>
+        </div>
+        <span class="file-time">18 hours ago</span>
+    </div>
+    <div class="file-item">
+        <div class="file-info">
+            <div class="file-icon"></div>
+            <span class="file-name">IMG_0137.jpeg</span>
+        </div>
+        <span class="file-time">18 hours ago</span>
+    </div>
+</div>
+
+</body>
+</html>
 
 
     <!-- FOOTER -->
